@@ -10,6 +10,7 @@ Tools
 * Express
 * MongoDb
 * Monk
+* Joi
 * Vue.js
 * Bootstrap
 * HTML
