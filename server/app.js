@@ -20,9 +20,21 @@ app.get('/', (req, res) => {
 
 app.get('/messages', (req, res) => {
   messages.getAll()
-    .then((messages) => {
+    .then(messages => {
       res.json(messages);
     })
+});
+
+app.post('/messages', (req, res) => {
+  console.log(req.body);
+  messages.insertMsg(req.body)
+    .then(message => {
+      res.json(message);
+    })
+    .catch(err => {
+      res.status(500);
+      res.json(err);
+    });
 });
 
 app.listen(PORT, () => {
